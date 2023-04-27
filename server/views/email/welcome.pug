@@ -1,0 +1,19 @@
+extends baseEmail
+
+block content
+  p Hi #{firstName},
+  p Thank you for registering your account and welcome to Excessive 🎉
+  p In order to be able to login and experience the full functionality of our website, you first need to confirm your email by clicking on this 
+    a(href=`${url}`, target='_blank') link
+    | .
+  //- table.btn.btn-primary(role='presentation', border='0', cellpadding='0', cellspacing='0')
+    //- tbody
+    //-   tr
+    //-     td(align='left')
+    //-       table(role='presentation', border='0', cellpadding='0', cellspacing='0')
+    //-         tbody
+    //-           tr
+    //-             td
+    //-               a(href=`${url}`, target='_blank') Upload user photo
+  
+  p - Excessive Administrator

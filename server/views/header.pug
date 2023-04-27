@@ -1,0 +1,68 @@
+#top-div.sticky
+  #logo
+    h1.logo 
+        a(href='/')
+  #main-nav
+    .main-menu.closed
+      
+      
+      if role === 'admin'
+        a(href="/administrator") Administrator
+      a(href="/about") About Us
+      a(href="/contact") Contact
+    a#cart(href='/cart')
+      i.fa-solid.fa-cart-shopping
+      span#cartCount
+    if user
+        a#login-link(href='/api/v1/users/logout')
+          i#login.fa-regular.fa-user
+          span#login-text Logout
+        a(href=`/user/${user}`) 
+          img(src=`/user-images/${userData.photo}`, class='user-photo')
+    else
+        a#login-link(href='/login')
+            i#login.fa-regular.fa-user
+            span#login-text Login
+    a#hamburger(href='')
+      i.fa-solid.fa-bars
+
+
+
+
+//- nav#main-nav
+//-     .main-menu.closed
+//-         a(href='/products.html') Jewelry
+//-         a(href='') Clothing
+//-         a(href='') SALE
+//-         a(href='') Blog
+//-         a(href='') About Us
+//-         a(href='') Contact
+//-         //a#addtocart(href='') Add to Cart
+//-         //a#listcart(href='') List Cart
+//-     .search
+//-         input#filter-list(list='types' placeholder='Filter items...')
+//-         datalist#types
+//-             option(value='Earrings')
+//-             option(value='Necklace')
+//-             option(value='Rings')
+//-             option(value='Bands')
+//-         a#filter(href='')
+//-             i.fa-solid.fa-filter
+//-         a#cart(href='/cart')
+//-             i.fa-solid.fa-cart-shopping
+//-         if user
+//-             a#login-link(href='/api/v1/users/logout')
+//-                 i#login.fa-regular.fa-user
+//-                 span#login-text Logout
+//-         else
+//-             a#login-link(href='/login')
+//-                 i#login.fa-regular.fa-user
+//-                 span#login-text Login
+//-         a#hamburger(href='')
+//-             i.fa-solid.fa-bars
+
+//- header
+//-     h1
+//-         a(href='/')
+//-             i.fa-solid.fa-gem 
+//-             |Jewelry House

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../../public/css/main.css" />
+    <link rel="stylesheet" href="../../../public/css/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&family=Play:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/5d700e72a6.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Document</title>
+  </head>
+  <body>
+    <a>
+      <li id="${product.id}">
+        <div class="item-card">
+          <div class="item-card__left-sidebar">
+            <div class="item-card__left-sidebar__tags">
+              <div class="item-card__left-sidebar__tags__sub popular">
+                Popular.
+              </div>
+              <div class="item-card__left-sidebar__tags__sub category">
+                Earrings.
+              </div>
+            </div>
+          </div>
+          <div class="item-card__right-main">
+            <div class="item-card__right-main__header">
+              <div
+                class="item-card__right-main__header__item-rating"
+                onclick="renderRatingStars(3.5)"
+              ></div>
+              <div class="item-card__right-main__header__icons">
+                <i class="fa-regular fa-heart"></i>
+                <i class="fa-regular fa-share-from-square"></i>
+              </div>
+            </div>
+            <div class="item-card__right-main__main">
+              <!-- <div class="card-item-classification">Popular</div> -->
+              <!-- ! da se premesti po potreba -->
+              <div class="item-card__right-main__main__desc">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Repudiandae placeat sapiente expedita ut dignissimos quos
+                blanditiis. Iusto nesciunt corrupti maiores libero magnam
+                assumenda obcaecati distinctio, tempora voluptatum ab maxime
+                accusantium aliquid quo ex placeat est? Quia eius dolore porro
+                laudantium voluptatum veniam nisi iusto pariatur a recusandae!
+                Molestiae, nesciunt dolorum!
+              </div>
+              <div class="item-card__right-main__main__img">
+                <img
+                  class="item-card__right-main__main__img__image"
+                  src="../../../public/images/valentina-jorio-kfcKlY8KoXo-unsplash.jpg"
+                  alt="product desc"
+                />
+                <div class="item-card__right-main__main__img__title">
+                  Heart Shaped Earrings
+                </div>
+              </div>
+            </div>
+
+            <div class="item-card__right-main__footer">
+              <div class="item-card__right-main__footer__item-price">€15</div>
+            </div>
+          </div>
+          <div class="more-details">More Details</div>
+        </div>
+      </li>
+    </a>
+
+    <script type="text/javascript">
+      function renderRatingStars(rating) {
+        const itemRating = document.querySelector(
+          '.item-card__right-main__header__item-rating'
+        );
+        let strInnerHTML = '';
+
+        for (let i = 1; i <= Math.floor(rating); i++) {
+          strInnerHTML += `<i class="fa-solid fa-star"></i>`;
+        }
+        if (rating > Math.floor(rating) && rating < Math.ceil(rating)) {
+          strInnerHTML += `<i class="fa-solid fa-star-half-stroke"></i>`;
+        }
+        if (rating <= 4) {
+          for (let j = Math.ceil(rating); j < 5; j++) {
+            strInnerHTML += `<i class="fa-regular fa-star"></i>`;
+          }
+        }
+        console.log(strInnerHTML);
+        itemRating.innerHTML = strInnerHTML + itemRating.innerHTML;
+      }
+    </script>
+  </body>
+</html>

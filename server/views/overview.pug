@@ -1,0 +1,56 @@
+extends base
+
+block content
+    #header
+        #banner
+            .slogan
+                h1
+                    | More than
+                    span.primary  necessary 
+                    | or
+                    span.primary  desirable
+            .hero-banner
+                img(src='/images/hero-banner-1-large.webp', alt='banner image of a ring')
+    //- .products
+    //-     div(class='products__header') breadcrumbs / bar
+    //-     .search
+    //-         input#filter-list(list='types', placeholder='Filter items...')
+    //-         datalist#types
+    //-             option(value='Earrings')
+    //-             option(value='Necklace')
+    //-             option(value='Rings')
+    //-             option(value='Bands')
+    //-         i#filter.fa-solid.fa-filter
+
+
+    main.grid-front-page-items
+        ul.grid
+            each product in products
+                a(href=`/product/${product.slug}`)
+                    li(id=`${product.id}`)
+                        .item-card
+                            div(class="item-card__left-sidebar")
+                                div(class="item-card__left-sidebar__tags")
+                                    div(class="item-card__left-sidebar__tags__sub popular") Popular.
+                                    div(class="item-card__left-sidebar__tags__sub category") #{product.category}.
+                            div(class="item-card__right-main")
+                                div(class="item-card__right-main__header")
+                                    div(class="item-card__right-main__header__item-rating") !{renderRatingStars(product.ratingsAvg)}
+                                    div(class="item-card__right-main__header__icons")
+                                        if user
+                                            - if (wishList.find(function(item) {return item==product.id})) 
+                                                i(id=`${product.id}-like`,class="fa-solid fa-heart")
+                                            - else 
+                                                i(id=`${product.id}-like`,class="fa-regular fa-heart")
+                                        else 
+                                            i(id=`${product.id}-like`,class="fa-regular fa-heart" )
+                                        i.fa-regular.fa-share-from-square(data-slug=`${product.slug}`)
+                                div(class="item-card__right-main__main")
+                                
+                                    div(class="item-card__right-main__main__desc") #{product.desc}
+                                    div(class="item-card__right-main__main__img")
+                                        img(class="item-card__right-main__main__img__image", src=`/images/${product.coverImage}` alt=`Image of ${product.desc}`)
+                                        div(class="item-card__right-main__main__img__title") #{product.name}
+                                    div(class="item-card__right-main__footer")
+                                        div(class="item-card__right-main__footer__item-price") €#{product.price}
+                            .more-details More Details

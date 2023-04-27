@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <meta name="description" content="" />
+    <script
+      src="https://kit.fontawesome.com/5d700e72a6.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../../public/css/products.css" />
+    <link rel="stylesheet" href="../../../public/css/main.css" />
+  </head>
+  <body>
+    <div class="root-div">
+      <!-- <div class="notification"></div> -->
+
+      <!-- header element -->
+
+      <header></header>
+
+      <div class="main">
+        <div class="item-images grid">
+          <div id="first-image" class="item-image">
+            <img
+              src="../../../public/images/jko1000-york-armchair---grey-velvet-1.jpg"
+            />
+          </div>
+          <div class="item-image">
+            <img
+              src="../../../public/images/marko-blazevic-iKPxCjUU_bg-unsplash.jpg"
+            />
+          </div>
+          <div class="item-image">
+            <img
+              src="../../../public/images/hero-banner ecomm website-large.png"
+            />
+          </div>
+          <div class="item-image">
+            <img src="../../../public/images/newsletter3.svg" />
+          </div>
+        </div>
+        <div class="item-details">
+          <div class="general">
+            <div class="category">Category</div>
+            <div class="favorite"><i class="fa-regular fa-heart"></i></div>
+          </div>
+          <h2>${itemID.title}</h2>
+
+          <div class="item-price">${itemID.price}</div>
+          <div class="variants">
+            <p>Product variants:</p>
+            <div class="variants-cards">
+              <a href="">
+                <img
+                  src="../../../public/images/jko1000-york-armchair---grey-velvet-1.jpg"
+                  alt=""
+                />
+              </a>
+            </div>
+          </div>
+          <div class="item-desc">${itemID.desc}</div>
+
+          <div class="rating">
+            <p>Rate this product:</p>
+            <div class="product-stars">
+              ${renderRatingStars( itemID.rating )}<span class="rating-value"
+                >${itemID.rating}</span
+              >
+            </div>
+          </div>
+          <div class="stock">Available stock: <span id="stock">365</span></div>
+          <div class="addtocart">
+            <i class="minus-amount fa-regular fa-square-minus"></i>
+            <span id="itemid"
+              ><input class="item-amount" type="text" value="1"
+            /></span>
+            <i class="plus-amount fa-regular fa-square-plus"></i>
+            <button id="addtocart">Add to Cart</button>
+          </div>
+          <div class="comments">Comments:</div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="../../../public/js/_init.js"></script>
+    <script type="module" src="../../../public/js/_item.js"></script>
+  </body>
+</html>

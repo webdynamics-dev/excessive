@@ -1,0 +1,54 @@
+extends base
+
+block content
+    .main
+        .item-images.product-grid
+            #first-image.item-image
+                img(src=`/images/${product.coverImage}` alt=`Image of ${product.name}`)
+            
+            each image in product.images
+                .item-image
+                    img(src=`/images/${image}` alt=`Image of ${product.name}`)
+            
+        .item-details
+            
+            .general
+                .category.title #{product.category}
+                .favorite
+                    if user
+                        - if (wishList.find(function(item) {return item==product.id})) 
+                            i(id=`${product.id}-like`,class="fa-solid fa-heart")
+                        - else 
+                            i(id=`${product.id}-like`,class="fa-regular fa-heart")
+                    else 
+                        i(id=`${product.id}-like`,class="fa-regular fa-heart")
+            h1 #{product.name}
+            .item-price.title Price:
+                .item-price__text €#{product.price}
+            //- .variants
+            //-     p.title Product variants:
+            //-     each variant in product.productGroup
+            //-         .variant-cards
+            //-             a(href='')
+            //-                 img(src='', alt='')
+            .item-desc.title Description: 
+                div.item-desc__text #{product.desc}
+            .rating.title Rate this product:
+                .product-stars(id=`${product.id}-rating`) !{renderRatingStars(product.ratingsAvg)}
+                    span.rating-value [#{product.ratingsAvg.toFixed(1)}]
+            .stock.title Available stock: 
+                span#stock #{product.inventory}
+            .addtocart.title Order Quantity:
+                div.quantity        
+                    i.minus-amount.fa-regular.fa-square-minus
+                    
+                    input(id='quantity__number',class='item-amount', type='text', value=1)
+                    i.plus-amount.fa-regular.fa-square-plus
+                    button(data-id=`${product._id}`)#add-to-cart Add to cart
+            .shipping.title Shipping cost:
+            //- .comments.title Comments:
+            //-     ul.comments
+            //-     each comment in product.comments
+            //-         li #{comment}
+
+    script(src="/js/product.js", type='module')

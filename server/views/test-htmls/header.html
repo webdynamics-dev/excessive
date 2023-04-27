@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Fashion and Jewelry Store" />
+    <link rel="stylesheet" href="../../../public/css/main.css" />
+    <link rel="stylesheet" href="../../../public/css/index.css" />
+    <script
+      src="https://kit.fontawesome.com/5d700e72a6.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=WindSong:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Excessive</title>
+  </head>
+
+  <body>
+    <div id="root-div">
+      <div id="top-div">
+        <div id="logo">
+          <h1 class="logo">Excessive</h1>
+        </div>
+        <div id="main-nav">
+          <div class="main-menu closed">
+            <a href="#">About Us</a><a href="#">Contact</a>
+          </div>
+          <a id="cart" href=""><i class="fa-solid fa-cart-shopping"></i></a
+          ><a id="login-link" href=""
+            ><i id="login" class="fa-regular fa-user"></i
+            ><span id="login-text">Login</span></a
+          ><a id="hamburger" href=""><i class="fa-solid fa-bars"></i></a>
+        </div>
+      </div>
+      <div id="header">
+        <div id="banner">
+          <div class="slogan">
+            <h1>
+              More than <span class="primary">necessary</span> or
+              <span class="primary">desirable</span>
+            </h1>
+          </div>
+          <div class="hero-banner">
+            <img
+              src="../../../public/images/hero-banner ecomm website-large.png"
+              width="858"
+              height="457"
+              alt=""
+            />
+          </div>
+        </div>
+        <!-- < -->
+      </div>
+
+      <div class="products">
+        <div class="products__header">breadcrumbs / bar</div>
+        <div class="search">
+          <input id="filter-list" list="types" placeholder="Filter items..." />
+          <datalist id="types">
+            <option value="Earrings"></option>
+            <option value="Necklace"></option>
+            <option value="Rings"></option>
+            <option value="Bands"></option>
+          </datalist>
+          <i id="filter" class="fa-solid fa-filter"></i>
+        </div>
+      </div>
+
+      <div class="grid">
+        <a>
+          <li id="${product.id}">
+            <div class="item-card">
+              <div class="item-card__left-sidebar">
+                <div class="item-card__left-sidebar__tags">
+                  <div class="item-card__left-sidebar__tags__sub popular">
+                    Popular.
+                  </div>
+                  <div class="item-card__left-sidebar__tags__sub category">
+                    Earrings.
+                  </div>
+                </div>
+              </div>
+              <div class="item-card__right-main">
+                <div class="item-card__right-main__header">
+                  <div
+                    class="item-card__right-main__header__item-rating"
+                    onclick="renderRatingStars(3.5)"
+                  ></div>
+                  <div class="item-card__right-main__header__icons">
+                    <i class="fa-regular fa-heart"></i>
+                    <i class="fa-regular fa-share-from-square"></i>
+                  </div>
+                </div>
+                <div class="item-card__right-main__main">
+                  <!-- <div class="card-item-classification">Popular</div> -->
+                  <!-- ! da se premesti po potreba -->
+                  <div class="item-card__right-main__main__desc">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Repudiandae placeat sapiente expedita ut dignissimos quos
+                    blanditiis. Iusto nesciunt corrupti maiores libero magnam
+                    assumenda obcaecati distinctio, tempora voluptatum ab maxime
+                    accusantium aliquid quo ex placeat est? Quia eius dolore
+                    porro laudantium voluptatum veniam nisi iusto pariatur a
+                    recusandae! Molestiae, nesciunt dolorum!
+                  </div>
+                  <div class="item-card__right-main__main__img">
+                    <img
+                      class="item-card__right-main__main__img__image"
+                      src="../../../public/images/valentina-jorio-kfcKlY8KoXo-unsplash.jpg"
+                      alt="product desc"
+                    />
+                    <div class="item-card__right-main__main__img__title">
+                      Heart Shaped Earrings
+                    </div>
+                  </div>
+                </div>
+                <div class="item-card__right-main__footer">
+                  <div class="item-card__right-main__footer__item-price">
+                    €15
+                  </div>
+                </div>
+              </div>
+              <div class="more-details">More Details</div>
+            </div>
+          </li>
+        </a>
+        <a>
+          <li id="${product.id}">
+            <div class="item-card">
+              <div class="item-card__left-sidebar">
+                <div class="item-card__left-sidebar__tags">
+                  <div class="item-card__left-sidebar__tags__sub popular">
+                    Popular.
+                  </div>
+                  <div class="item-card__left-sidebar__tags__sub category">
+                    Earrings.
+                  </div>
+                </div>
+              </div>
+              <div class="item-card__right-main">
+                <div class="item-card__right-main__header">
+                  <div
+                    class="item-card__right-main__header__item-rating"
+                    onclick="renderRatingStars(3.5)"
+                  ></div>
+                  <div class="item-card__right-main__header__icons">
+                    <i class="fa-regular fa-heart"></i>
+                    <i class="fa-regular fa-share-from-square"></i>
+                  </div>
+                </div>
+                <div class="item-card__right-main__main">
+                  <!-- <div class="card-item-classification">Popular</div> -->
+                  <!-- ! da se premesti po potreba -->
+                  <div class="item-card__right-main__main__desc">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Repudiandae placeat sapiente expedita ut dignissimos quos
+                    blanditiis. Iusto nesciunt corrupti maiores libero magnam
+                    assumenda obcaecati distinctio, tempora voluptatum ab maxime
+                    accusantium aliquid quo ex placeat est? Quia eius dolore
+                    porro laudantium voluptatum veniam nisi iusto pariatur a
+                    recusandae! Molestiae, nesciunt dolorum!
+                  </div>
+                  <div class="item-card__right-main__main__img">
+                    <img
+                      class="item-card__right-main__main__img__image"
+                      src="../../../public/images/valentina-jorio-kfcKlY8KoXo-unsplash.jpg"
+                      alt="product desc"
+                    />
+                    <div class="item-card__right-main__main__img__title">
+                      Heart Shaped Earrings
+                    </div>
+                  </div>
+                </div>
+                <div class="item-card__right-main__footer">
+                  <div class="item-card__right-main__footer__item-price">
+                    €15
+                  </div>
+                </div>
+              </div>
+              <div class="more-details">More Details</div>
+            </div>
+          </li>
+        </a>
+        <a>
+          <li id="${product.id}">
+            <div class="item-card">
+              <div class="item-card__left-sidebar">
+                <div class="item-card__left-sidebar__tags">
+                  <div class="item-card__left-sidebar__tags__sub popular">
+                    Popular.
+                  </div>
+                  <div class="item-card__left-sidebar__tags__sub category">
+                    Earrings.
+                  </div>
+                </div>
+              </div>
+              <div class="item-card__right-main">
+                <div class="item-card__right-main__header">
+                  <div
+                    class="item-card__right-main__header__item-rating"
+                    onclick="renderRatingStars(3.5)"
+                  ></div>
+                  <div class="item-card__right-main__header__icons">
+                    <i class="fa-regular fa-heart"></i>
+                    <i class="fa-regular fa-share-from-square"></i>
+                  </div>
+                </div>
+                <div class="item-card__right-main__main">
+                  <!-- <div class="card-item-classification">Popular</div> -->
+                  <!-- ! da se premesti po potreba -->
+                  <div class="item-card__right-main__main__desc">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Repudiandae placeat sapiente expedita ut dignissimos quos
+                    blanditiis. Iusto nesciunt corrupti maiores libero magnam
+                    assumenda obcaecati distinctio, tempora voluptatum ab maxime
+                    accusantium aliquid quo ex placeat est? Quia eius dolore
+                    porro laudantium voluptatum veniam nisi iusto pariatur a
+                    recusandae! Molestiae, nesciunt dolorum!
+                  </div>
+                  <div class="item-card__right-main__main__img">
+                    <img
+                      class="item-card__right-main__main__img__image"
+                      src="../../../public/images/valentina-jorio-kfcKlY8KoXo-unsplash.jpg"
+                      alt="product desc"
+                    />
+                    <div class="item-card__right-main__main__img__title">
+                      Heart Shaped Earrings
+                    </div>
+                  </div>
+                </div>
+                <div class="item-card__right-main__footer">
+                  <div class="item-card__right-main__footer__item-price">
+                    €15
+                  </div>
+                </div>
+              </div>
+              <div class="more-details">More Details</div>
+            </div>
+          </li>
+        </a>
+        <a>
+          <li id="${product.id}">
+            <div class="item-card">
+              <div class="item-card__left-sidebar">
+                <div class="item-card__left-sidebar__tags">
+                  <div class="item-card__left-sidebar__tags__sub popular">
+                    Popular.
+                  </div>
+                  <div class="item-card__left-sidebar__tags__sub category">
+                    Earrings.
+                  </div>
+                </div>
+              </div>
+              <div class="item-card__right-main">
+                <div class="item-card__right-main__header">
+                  <div
+                    class="item-card__right-main__header__item-rating"
+                    onclick="renderRatingStars(3.5)"
+                  ></div>
+                  <div class="item-card__right-main__header__icons">
+                    <i class="fa-regular fa-heart"></i>
+                    <i class="fa-regular fa-share-from-square"></i>
+                  </div>
+                </div>
+                <div class="item-card__right-main__main">
+                  <!-- <div class="card-item-classification">Popular</div> -->
+                  <!-- ! da se premesti po potreba -->
+                  <div class="item-card__right-main__main__desc">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Repudiandae placeat sapiente expedita ut dignissimos quos
+                    blanditiis. Iusto nesciunt corrupti maiores libero magnam
+                    assumenda obcaecati distinctio, tempora voluptatum ab maxime
+                    accusantium aliquid quo ex placeat est? Quia eius dolore
+                    porro laudantium voluptatum veniam nisi iusto pariatur a
+                    recusandae! Molestiae, nesciunt dolorum!
+                  </div>
+                  <div class="item-card__right-main__main__img">
+                    <img
+                      class="item-card__right-main__main__img__image"
+                      src="../../../public/images/valentina-jorio-kfcKlY8KoXo-unsplash.jpg"
+                      alt="product desc"
+                    />
+                    <div class="item-card__right-main__main__img__title">
+                      Heart Shaped Earrings
+                    </div>
+                  </div>
+                </div>
+                <div class="item-card__right-main__footer">
+                  <div class="item-card__right-main__footer__item-price">
+                    €15
+                  </div>
+                </div>
+              </div>
+              <div class="more-details">More Details</div>
+            </div>
+          </li>
+        </a>
+        <a>
+          <li id="${product.id}">
+            <div class="item-card">
+              <div class="item-card__left-sidebar">
+                <div class="item-card__left-sidebar__tags">
+                  <div class="item-card__left-sidebar__tags__sub popular">
+                    Popular.
+                  </div>
+                  <div class="item-card__left-sidebar__tags__sub category">
+                    Earrings.
+                  </div>
+                </div>
+              </div>
+              <div class="item-card__right-main">
+                <div class="item-card__right-main__header">
+                  <div
+                    class="item-card__right-main__header__item-rating"
+                    onclick="renderRatingStars(3.5)"
+                  ></div>
+                  <div class="item-card__right-main__header__icons">
+                    <i class="fa-regular fa-heart"></i>
+                    <i class="fa-regular fa-share-from-square"></i>
+                  </div>
+                </div>
+                <div class="item-card__right-main__main">
+                  <!-- <div class="card-item-classification">Popular</div> -->
+                  <!-- ! da se premesti po potreba -->
+                  <div class="item-card__right-main__main__desc">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Repudiandae placeat sapiente expedita ut dignissimos quos
+                    blanditiis. Iusto nesciunt corrupti maiores libero magnam
+                    assumenda obcaecati distinctio, tempora voluptatum ab maxime
+                    accusantium aliquid quo ex placeat est? Quia eius dolore
+                    porro laudantium voluptatum veniam nisi iusto pariatur a
+                    recusandae! Molestiae, nesciunt dolorum!
+                  </div>
+                  <div class="item-card__right-main__main__img">
+                    <img
+                      class="item-card__right-main__main__img__image"
+                      src="../../../public/images/valentina-jorio-kfcKlY8KoXo-unsplash.jpg"
+                      alt="product desc"
+                    />
+                    <div class="item-card__right-main__main__img__title">
+                      Heart Shaped Earrings
+                    </div>
+                  </div>
+                </div>
+                <div class="item-card__right-main__footer">
+                  <div class="item-card__right-main__footer__item-price">
+                    €15
+                  </div>
+                </div>
+              </div>
+              <div class="more-details">More Details</div>
+            </div>
+          </li>
+        </a>
+        <a>
+          <li id="${product.id}">
+            <div class="item-card">
+              <div class="item-card__left-sidebar">
+                <div class="item-card__left-sidebar__tags">
+                  <div class="item-card__left-sidebar__tags__sub popular">
+                    Popular.
+                  </div>
+                  <div class="item-card__left-sidebar__tags__sub category">
+                    Earrings.
+                  </div>
+                </div>
+              </div>
+              <div class="item-card__right-main">
+                <div class="item-card__right-main__header">
+                  <div
+                    class="item-card__right-main__header__item-rating"
+                    onclick="renderRatingStars(3.5)"
+                  ></div>
+                  <div class="item-card__right-main__header__icons">
+                    <i class="fa-regular fa-heart"></i>
+                    <i class="fa-regular fa-share-from-square"></i>
+                  </div>
+                </div>
+                <div class="item-card__right-main__main">
+                  <!-- <div class="card-item-classification">Popular</div> -->
+                  <!-- ! da se premesti po potreba -->
+                  <div class="item-card__right-main__main__desc">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Repudiandae placeat sapiente expedita ut dignissimos quos
+                    blanditiis. Iusto nesciunt corrupti maiores libero magnam
+                    assumenda obcaecati distinctio, tempora voluptatum ab maxime
+                    accusantium aliquid quo ex placeat est? Quia eius dolore
+                    porro laudantium voluptatum veniam nisi iusto pariatur a
+                    recusandae! Molestiae, nesciunt dolorum!
+                  </div>
+                  <div class="item-card__right-main__main__img">
+                    <img
+                      class="item-card__right-main__main__img__image"
+                      src="../../../public/images/valentina-jorio-kfcKlY8KoXo-unsplash.jpg"
+                      alt="product desc"
+                    />
+                    <div class="item-card__right-main__main__img__title">
+                      Heart Shaped Earrings
+                    </div>
+                  </div>
+                </div>
+                <div class="item-card__right-main__footer">
+                  <div class="item-card__right-main__footer__item-price">
+                    €15
+                  </div>
+                </div>
+              </div>
+              <div class="more-details">More Details</div>
+            </div>
+          </li>
+        </a>
+        <a>
+          <li id="${product.id}">
+            <div class="item-card">
+              <div class="item-card__left-sidebar">
+                <div class="item-card__left-sidebar__tags">
+                  <div class="item-card__left-sidebar__tags__sub popular">
+                    Popular.
+                  </div>
+                  <div class="item-card__left-sidebar__tags__sub category">
+                    Earrings.
+                  </div>
+                </div>
+              </div>
+              <div class="item-card__right-main">
+                <div class="item-card__right-main__header">
+                  <div
+                    class="item-card__right-main__header__item-rating"
+                    onclick="renderRatingStars(3.5)"
+                  ></div>
+                  <div class="item-card__right-main__header__icons">
+                    <i class="fa-regular fa-heart"></i>
+                    <i class="fa-regular fa-share-from-square"></i>
+                  </div>
+                </div>
+                <div class="item-card__right-main__main">
+                  <!-- <div class="card-item-classification">Popular</div> -->
+                  <!-- ! da se premesti po potreba -->
+                  <div class="item-card__right-main__main__desc">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Repudiandae placeat sapiente expedita ut dignissimos quos
+                    blanditiis. Iusto nesciunt corrupti maiores libero magnam
+                    assumenda obcaecati distinctio, tempora voluptatum ab maxime
+                    accusantium aliquid quo ex placeat est? Quia eius dolore
+                    porro laudantium voluptatum veniam nisi iusto pariatur a
+                    recusandae! Molestiae, nesciunt dolorum!
+                  </div>
+                  <div class="item-card__right-main__main__img">
+                    <img
+                      class="item-card__right-main__main__img__image"
+                      src="../../../public/images/valentina-jorio-kfcKlY8KoXo-unsplash.jpg"
+                      alt="product desc"
+                    />
+                    <div class="item-card__right-main__main__img__title">
+                      Heart Shaped Earrings
+                    </div>
+                  </div>
+                </div>
+                <div class="item-card__right-main__footer">
+                  <div class="item-card__right-main__footer__item-price">
+                    €15
+                  </div>
+                </div>
+              </div>
+              <div class="more-details">More Details</div>
+            </div>
+          </li>
+        </a>
+        <a>
+          <li id="${product.id}">
+            <div class="item-card">
+              <div class="item-card__left-sidebar">
+                <div class="item-card__left-sidebar__tags">
+                  <div class="item-card__left-sidebar__tags__sub popular">
+                    Popular.
+                  </div>
+                  <div class="item-card__left-sidebar__tags__sub category">
+                    Earrings.
+                  </div>
+                </div>
+              </div>
+              <div class="item-card__right-main">
+                <div class="item-card__right-main__header">
+                  <div
+                    class="item-card__right-main__header__item-rating"
+                    onclick="renderRatingStars(3.5)"
+                  ></div>
+                  <div class="item-card__right-main__header__icons">
+                    <i class="fa-regular fa-heart"></i>
+                    <i class="fa-regular fa-share-from-square"></i>
+                  </div>
+                </div>
+                <div class="item-card__right-main__main">
+                  <!-- <div class="card-item-classification">Popular</div> -->
+                  <!-- ! da se premesti po potreba -->
+                  <div class="item-card__right-main__main__desc">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Repudiandae placeat sapiente expedita ut dignissimos quos
+                    blanditiis. Iusto nesciunt corrupti maiores libero magnam
+                    assumenda obcaecati distinctio, tempora voluptatum ab maxime
+                    accusantium aliquid quo ex placeat est? Quia eius dolore
+                    porro laudantium voluptatum veniam nisi iusto pariatur a
+                    recusandae! Molestiae, nesciunt dolorum!
+                  </div>
+                  <div class="item-card__right-main__main__img">
+                    <img
+                      class="item-card__right-main__main__img__image"
+                      src="../../../public/images/valentina-jorio-kfcKlY8KoXo-unsplash.jpg"
+                      alt="product desc"
+                    />
+                    <div class="item-card__right-main__main__img__title">
+                      Heart Shaped Earrings
+                    </div>
+                  </div>
+                </div>
+                <div class="item-card__right-main__footer">
+                  <div class="item-card__right-main__footer__item-price">
+                    €15
+                  </div>
+                </div>
+              </div>
+              <div class="more-details">More Details</div>
+            </div>
+          </li>
+        </a>
+        <a>
+          <li id="${product.id}">
+            <div class="item-card">
+              <div class="item-card__left-sidebar">
+                <div class="item-card__left-sidebar__tags">
+                  <div class="item-card__left-sidebar__tags__sub popular">
+                    Popular.
+                  </div>
+                  <div class="item-card__left-sidebar__tags__sub category">
+                    Earrings.
+                  </div>
+                </div>
+              </div>
+              <div class="item-card__right-main">
+                <div class="item-card__right-main__header">
+                  <div
+                    class="item-card__right-main__header__item-rating"
+                    onclick="renderRatingStars(3.5)"
+                  ></div>
+                  <div class="item-card__right-main__header__icons">
+                    <i class="fa-regular fa-heart"></i>
+                    <i class="fa-regular fa-share-from-square"></i>
+                  </div>
+                </div>
+                <div class="item-card__right-main__main">
+                  <!-- <div class="card-item-classification">Popular</div> -->
+                  <!-- ! da se premesti po potreba -->
+                  <div class="item-card__right-main__main__desc">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Repudiandae placeat sapiente expedita ut dignissimos quos
+                    blanditiis. Iusto nesciunt corrupti maiores libero magnam
+                    assumenda obcaecati distinctio, tempora voluptatum ab maxime
+                    accusantium aliquid quo ex placeat est? Quia eius dolore
+                    porro laudantium voluptatum veniam nisi iusto pariatur a
+                    recusandae! Molestiae, nesciunt dolorum!
+                  </div>
+                  <div class="item-card__right-main__main__img">
+                    <img
+                      class="item-card__right-main__main__img__image"
+                      src="../../../public/images/valentina-jorio-kfcKlY8KoXo-unsplash.jpg"
+                      alt="product desc"
+                    />
+                    <div class="item-card__right-main__main__img__title">
+                      Heart Shaped Earrings
+                    </div>
+                  </div>
+                </div>
+                <div class="item-card__right-main__footer">
+                  <div class="item-card__right-main__footer__item-price">
+                    €15
+                  </div>
+                </div>
+              </div>
+              <div class="more-details">More Details</div>
+            </div>
+          </li>
+        </a>
+        <a>
+          <li id="${product.id}">
+            <div class="item-card">
+              <div class="item-card__left-sidebar">
+                <div class="item-card__left-sidebar__tags">
+                  <div class="item-card__left-sidebar__tags__sub popular">
+                    Popular.
+                  </div>
+                  <div class="item-card__left-sidebar__tags__sub category">
+                    Earrings.
+                  </div>
+                </div>
+              </div>
+              <div class="item-card__right-main">
+                <div class="item-card__right-main__header">
+                  <div
+                    class="item-card__right-main__header__item-rating"
+                    onclick="renderRatingStars(3.5)"
+                  ></div>
+                  <div class="item-card__right-main__header__icons">
+                    <i class="fa-regular fa-heart"></i>
+                    <i class="fa-regular fa-share-from-square"></i>
+                  </div>
+                </div>
+                <div class="item-card__right-main__main">
+                  <!-- <div class="card-item-classification">Popular</div> -->
+                  <!-- ! da se premesti po potreba -->
+                  <div class="item-card__right-main__main__desc">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Repudiandae placeat sapiente expedita ut dignissimos quos
+                    blanditiis. Iusto nesciunt corrupti maiores libero magnam
+                    assumenda obcaecati distinctio, tempora voluptatum ab maxime
+                    accusantium aliquid quo ex placeat est? Quia eius dolore
+                    porro laudantium voluptatum veniam nisi iusto pariatur a
+                    recusandae! Molestiae, nesciunt dolorum!
+                  </div>
+                  <div class="item-card__right-main__main__img">
+                    <img
+                      class="item-card__right-main__main__img__image"
+                      src="../../../public/images/valentina-jorio-kfcKlY8KoXo-unsplash.jpg"
+                      alt="product desc"
+                    />
+                    <div class="item-card__right-main__main__img__title">
+                      Heart Shaped Earrings
+                    </div>
+                  </div>
+                </div>
+                <div class="item-card__right-main__footer">
+                  <div class="item-card__right-main__footer__item-price">
+                    €15
+                  </div>
+                </div>
+              </div>
+              <div class="more-details">More Details</div>
+            </div>
+          </li>
+        </a>
+        <a>
+          <li id="${product.id}">
+            <div class="item-card">
+              <div class="item-card__left-sidebar">
+                <div class="item-card__left-sidebar__tags">
+                  <div class="item-card__left-sidebar__tags__sub popular">
+                    Popular.
+                  </div>
+                  <div class="item-card__left-sidebar__tags__sub category">
+                    Earrings.
+                  </div>
+                </div>
+              </div>
+              <div class="item-card__right-main">
+                <div class="item-card__right-main__header">
+                  <div
+                    class="item-card__right-main__header__item-rating"
+                    onclick="renderRatingStars(3.5)"
+                  ></div>
+                  <div class="item-card__right-main__header__icons">
+                    <i class="fa-regular fa-heart"></i>
+                    <i class="fa-regular fa-share-from-square"></i>
+                  </div>
+                </div>
+                <div class="item-card__right-main__main">
+                  <!-- <div class="card-item-classification">Popular</div> -->
+                  <!-- ! da se premesti po potreba -->
+                  <div class="item-card__right-main__main__desc">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Repudiandae placeat sapiente expedita ut dignissimos quos
+                    blanditiis. Iusto nesciunt corrupti maiores libero magnam
+                    assumenda obcaecati distinctio, tempora voluptatum ab maxime
+                    accusantium aliquid quo ex placeat est? Quia eius dolore
+                    porro laudantium voluptatum veniam nisi iusto pariatur a
+                    recusandae! Molestiae, nesciunt dolorum!
+                  </div>
+                  <div class="item-card__right-main__main__img">
+                    <img
+                      class="item-card__right-main__main__img__image"
+                      src="../../../public/images/valentina-jorio-kfcKlY8KoXo-unsplash.jpg"
+                      alt="product desc"
+                    />
+                    <div class="item-card__right-main__main__img__title">
+                      Heart Shaped Earrings
+                    </div>
+                  </div>
+                </div>
+                <div class="item-card__right-main__footer">
+                  <div class="item-card__right-main__footer__item-price">
+                    €15
+                  </div>
+                </div>
+              </div>
+              <div class="more-details">More Details</div>
+            </div>
+          </li>
+        </a>
+        <a>
+          <li id="${product.id}">
+            <div class="item-card">
+              <div class="item-card__left-sidebar">
+                <div class="item-card__left-sidebar__tags">
+                  <div class="item-card__left-sidebar__tags__sub popular">
+                    Popular.
+                  </div>
+                  <div class="item-card__left-sidebar__tags__sub category">
+                    Earrings.
+                  </div>
+                </div>
+              </div>
+              <div class="item-card__right-main">
+                <div class="item-card__right-main__header">
+                  <div
+                    class="item-card__right-main__header__item-rating"
+                    onclick="renderRatingStars(3.5)"
+                  ></div>
+                  <div class="item-card__right-main__header__icons">
+                    <i class="fa-regular fa-heart"></i>
+                    <i class="fa-regular fa-share-from-square"></i>
+                  </div>
+                </div>
+                <div class="item-card__right-main__main">
+                  <!-- <div class="card-item-classification">Popular</div> -->
+                  <!-- ! da se premesti po potreba -->
+                  <div class="item-card__right-main__main__desc">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Repudiandae placeat sapiente expedita ut dignissimos quos
+                    blanditiis. Iusto nesciunt corrupti maiores libero magnam
+                    assumenda obcaecati distinctio, tempora voluptatum ab maxime
+                    accusantium aliquid quo ex placeat est? Quia eius dolore
+                    porro laudantium voluptatum veniam nisi iusto pariatur a
+                    recusandae! Molestiae, nesciunt dolorum!
+                  </div>
+                  <div class="item-card__right-main__main__img">
+                    <img
+                      class="item-card__right-main__main__img__image"
+                      src="../../../public/images/valentina-jorio-kfcKlY8KoXo-unsplash.jpg"
+                      alt="product desc"
+                    />
+                    <div class="item-card__right-main__main__img__title">
+                      Heart Shaped Earrings
+                    </div>
+                  </div>
+                </div>
+                <div class="item-card__right-main__footer">
+                  <div class="item-card__right-main__footer__item-price">
+                    €15
+                  </div>
+                </div>
+              </div>
+              <div class="more-details">More Details</div>
+            </div>
+          </li>
+        </a>
+      </div>
+
+      <footer>
+        <div id="newsletter">
+          <div id="subscribe">
+            <h2 class="newsletter">Subscribe to the newsletter</h2>
+            <div id="subscribe-details">
+              <input type="text" placeholder="email address" />
+              <button id="subscribe" type="submit">Subscribe</button>
+            </div>
+          </div>
+          <div id="subscribe-infographic">
+            <img src="../../../public/images/newsletter3.svg" alt="" />
+          </div>
+        </div>
+        <div id="signature">
+          <div id="copyrights">
+            Copyright ⓒ 2023 Excessive. All rights reserved.
+          </div>
+          <div id="developed">
+            <p>Design and development</p>
+            <a href="https://www.webdynamics.dev">
+              <img
+                src="../../../public/images/webdynamics.svg"
+                alt="WebDynamics logo"
+              />
+            </a>
+          </div>
+          <div id="social">
+            <a href="" id="instagram"
+              ><i class="fa-brands fa-square-instagram"></i
+            ></a>
+            <a href="" id="facebook"
+              ><i class="fa-brands fa-square-facebook"></i
+            ></a>
+          </div>
+        </div>
+      </footer>
+
+      <script type="text/javascript">
+        function renderRatingStars(rating) {
+          const itemRating = document.querySelector(
+            '.item-card__right-main__header__item-rating'
+          );
+          let strInnerHTML = '';
+
+          for (let i = 1; i <= Math.floor(rating); i++) {
+            strInnerHTML += `<i class="fa-solid fa-star"></i>`;
+          }
+          if (rating > Math.floor(rating) && rating < Math.ceil(rating)) {
+            strInnerHTML += `<i class="fa-solid fa-star-half-stroke"></i>`;
+          }
+          if (rating <= 4) {
+            for (let j = Math.ceil(rating); j < 5; j++) {
+              strInnerHTML += `<i class="fa-regular fa-star"></i>`;
+            }
+          }
+          console.log(strInnerHTML);
+          itemRating.innerHTML = strInnerHTML + itemRating.innerHTML;
+        }
+      </script>
+    </div>
+    <script type="module" src="../../../public/js/index.js"></script>
+  </body>
+</html>

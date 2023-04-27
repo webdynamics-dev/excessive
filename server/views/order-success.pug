@@ -1,0 +1,11 @@
+extends base
+
+block content
+    
+    .main
+        .order-success
+            h1 Congratulations, your order was successfully completed!
+            p Your order id is 
+                span#order-id #{orderId}
+                |, please save this number for your reference.
+            p You will receive confirmation email shortly, with your order details. If this is not the case, please check your spam folder.

@@ -1,0 +1,21 @@
+extends base
+
+block content
+    .main
+        .login-main
+            .login
+                h1 Welcome back!
+                form.login-form()
+                    label(for="input-login") Email
+                    input#email.form-input(type="email", name="email", placeholder="Enter your email...", required, minlenght="3")
+                    label#label-password(for="input-password")
+                        span Password
+                        span(id='forgotten-password')
+                            a(href="") Forgot your password?
+                    input#password.form-input(type="password", name="password", placeholder="Enter your password...", required, minlenght="8")
+                    button#submit-login(type="submit") Login
+                .no-account
+                    | Don't have an account? 
+                    a(href="/signup") Sign Up
+
+    script(type='module', src='/js/login.js')             

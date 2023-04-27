@@ -1,0 +1,13 @@
+extends base
+
+block content
+    .main
+        - const fields = getUserSchemaKeys()
+
+        .signup-main
+            .signup
+                h1 Create account?
+                form.signup-form()
+                    span !{getUserSchemaKeys()}
+                    button#submit-signup(type="submit") Sign Up
+    script(type='module', src='/js/signup.js')                

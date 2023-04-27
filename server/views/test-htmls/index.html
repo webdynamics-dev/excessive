@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Fashion and Jewelry Store" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <script
+      src="https://kit.fontawesome.com/5d700e72a6.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
+      rel="stylesheet"
+    />
+    <title>Jewelry House</title>
+  </head>
+
+  <body>
+    <div class="root-div">
+      <!-- notification bar -->
+
+      <div class="notification"></div>
+
+      <!-- header element -->
+
+      <header></header>
+
+      <nav id="main-nav"></nav>
+
+<p>Total products: <span id="products-number">x</span>products, <span "total-items-number">y</span>items</p>
+
+      <!-- product card section -->
+
+      <main class="grid-front-page-items">
+        <ul class="grid"></ul>
+      </main>
+
+      <!-- footer section -->
+      <footer class="footer">
+        <h2 class="newsletter">Subscribe to the newsletter</h2>
+        <div class="newsletter">
+          <input type="text" placeholder="email address" />
+          <button id="testing" type="submit">Submit</button>
+        </div>
+      </footer>
+
+      <div class="signature">
+        Copyright ⓒ 2022 Pinche Putana. All rights reserved. <br />
+        Pinche and Putana are registered trademarks of Fat Bitch.
+
+        <!-- MULTER TESTING ENVIRONMENT -->
+
+        <!-- SINGLE FILE -->
+        <!-- <form action="/uploadfile" enctype="multipart/form-data" method="POST">
+          <input type="file" name="myFile" />
+          <input type="submit" value="Upload a file" />
+        </form> -->
+        <!-- MULTIPLE FILES -->
+        <form
+          action="http://127.0.0.1:5050/uploadimages/63aca3a4c48de50623dae2f9"
+          enctype="multipart/form-data"
+          method="POST"
+        >
+          Select cover image:
+          <input type="file" name="coverImage" accept="image/*" /> Select
+          images: <input type="file" name="images" multiple accept="image/*" />
+          <input type="submit" value="Upload your files" />
+        </form>
+        <!-- PHOTO-->
+        <!-- <form
+          action="http://127.0.0.1:5050/uploadphoto"
+          enctype="multipart/form-data"
+          method="POST"
+        >
+          Select cover image: <input type="file" name="coverImage" accept="image/*" />
+          <input type="submit" value="Upload Photo" />
+        </form> -->
+
+        <!-- END MULTER TESTING ENVIRONMENT -->
+      </div>
+    </div>
+
+    <script type="module" src="/js/init.js"></script>
+    <script type="module" src="/js/index.js"></script>
+  </body>
+</html>

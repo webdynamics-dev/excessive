@@ -1,0 +1,26 @@
+extends base
+
+block content
+    .main
+        .main-question
+            .image
+                img(src='./images/business-hand-with-mobile-phone.webp')
+            h2 Contact Us 
+            #questions 
+                p For any product related questions contact us using this contact form:
+                label(for='type') Inquiry Type
+                select(id='type' list='types', required, placeholder='Choose type of inquiry...')
+                    option(value='Question regarding products and orders') Question regarding products and orders
+                    option(value='Problems with payments, user or site functionality') Problems with payments, user or site functionality
+            
+                label(for='question') Question
+                input(type='text' id='question' required, minlength='10')
+                label(for='name') Your name
+                input(type='text' id='name')
+                label(for='email') Your email
+                input(type='email' id='email' required)
+                button(id='submit-question') Submit question
+
+       
+
+    script(src="/js/contactus.js", type='module')

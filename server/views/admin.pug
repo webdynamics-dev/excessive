@@ -1,0 +1,235 @@
+extends base
+
+block content
+    .main
+        .main-admin
+            p Welcome #{loggedUser.firstName}, you are #{loggedUser.metadata.role}.
+
+            .administration
+                .buttons
+                    div(id='btn-orders', class='div-button active') Orders
+                    div(id='btn-products', class='div-button') Products
+                    div(id='btn-users', class='div-button') Users
+
+                div(id='orders', class='')
+                    h3 Orders
+                    each order in allOrders 
+                        div(id=`${order._id}`, class='order')
+                            div.order-header
+                                div.order-id 
+                                    | Order ID
+                                    div #{order._id}
+                                .date-ordered 
+                                    | Date Ordered
+                                    div #{order.dateOrdered.toLocaleDateString("en-US")}
+                                div.paypal-result
+                                    | PayPal Result
+                                    div #{order.paypalResult}
+                                .transaction-flag 
+                                    | Transaction Flag
+                                    div #{order.transactionFlag}
+                                .paypal-amount 
+                                    | PayPal Amount
+                                    div #{order.paypalAmount}
+                            div.order-details.hidden
+                                .order-details__items-ordered
+                                    each item in order.items 
+                                        div.ordered-items
+                                            | Product ID
+                                            div #{item.productId._id}
+                                            | Product Name
+                                            div #{item.productId.name}
+                                            | Cover Image
+                                            div 
+                                                img(src=`/images/${item.productId.coverImage}`)
+                                            | Product Version
+                                            div #{item.productVersion}
+                                            | Ordered Quantity
+                                            div #{item.amount}
+                                            | Item Unit Price
+                                            div #{item.unitPrice}
+                                    .user-id 
+                                        | User ID
+                                        div #{order.userId._id}
+                                    .name 
+                                        | Name
+                                        div #{order.userId.firstName} #{order.userId.lastName}
+                                    .email
+                                        | Email
+                                        div #{order.userId.email}
+                                .order-details__shipping-details 
+                                    .shipping-name 
+                                        | Shipping Name
+                                        div #{order.name}
+                                    .shipping-address 
+                                        | Shipping Address
+                                        div #{order.address}
+                                    .zipcode 
+                                        | Zipcode 
+                                        div #{order.zipcode}
+                                    .city 
+                                        | Shipping City 
+                                        div #{order.city}
+                                    .country 
+                                        | Shipping Country 
+                                        div #{order.country}
+                                    .telephone 
+                                        | Shipping Telephone 
+                                        div #{order.telephone}
+                                    div.shipping-cost
+                                        | Shipping Cost
+                                        div #{order.shippingCost}
+                                    .shippped 
+                                        | Shipped?
+                                        div(id=`${order._id}-shipped`) #{order.shipped}
+                                    .tracking-number 
+                                        | Tracking Number 
+                                        div(id=`${order._id}-tracking`) #{order.trackingNumber}
+                                    .date-shipped 
+                                        | Date Shipped 
+                                        div(id=`${order._id}-date-shipped`) #{order.dateShipped}
+                                    .cancelled 
+                                        | Cancelled? 
+                                        div(id=`${order._id}-cancelled`) #{order.cancelled}
+                                    .date-cancelled 
+                                        | Date Cancelled  
+                                        div(id=`${order._id}-date-cancelled`) #{order.dateCancelled}
+                                .order-details__payment-details
+                                    .paypal-transaction-id 
+                                        | PayPal Transaction ID
+                                        div #{order.paypalTransactionId}
+                                    .paypal-currency 
+                                        | PayPal Currency
+                                        div #{order.paypalCurrency}
+                                    .paypal-fee 
+                                        | PayPal Fee
+                                        div #{order.paypalFee}
+                                    .paypal-netamount 
+                                        | PayPal Net Amount
+                                        div #{order.paypalNetAmount}
+                                    .paypal-payer-id 
+                                        | PayPal Payer ID
+                                        div #{order.paypalPayerId}
+                                    div PayPal Links
+                                        each link in order.paypalLinks
+                                            .paypal-links 
+                                                div 
+                                                    | rel
+                                                    | #{link.rel}
+                                                div 
+                                                    | href
+                                                    | #{link.href}
+                                                div 
+                                                    | method
+                                                    | #{link.method}
+                                .order-buttons
+                                    input(type='text', class='tracking-number', placeholder='tracking number')
+                                    button(id=`${order._id}-btn-shipped`, data-id=`${order._id}`, class='order-shipped') Mark as shipped 
+                                    //- button(id=`${order._id}-btn-cancelled`, data-id=`${order._id}`, class='order-cancelled') Cancel order
+
+                div(id='products', class='hidden')
+                    h3 Products
+                    button#new-product Add new product
+                    each product in allProducts
+                        div(id=`${product._id}`, class='product')
+                            div.product-header
+                                div.product-id 
+                                    | Product ID 
+                                    div #{product._id}
+                                div.product-name 
+                                    | Product Name 
+                                    div #{product.name}
+                                div.product-category
+                                    | Product Category 
+                                    div #{product.category}
+                                div.product-inventory
+                                    | Inventory
+                                    div #{product.inventory}
+                                div.product-version 
+                                    | Version
+                                    div(id=`${product._id}-version`) #{product.metadata.version}
+                            div.product-details.hidden
+                                div.cover-image 
+                                    img(src=`/images/${product.coverImage}`)
+                                each image in product.images
+                                    div.product-images 
+                                        img(src=`/images/${image}`)
+                                div.product-price 
+                                    | Price
+                                    div #{product.price}#{product.currency}
+                                div.product-last-updated 
+                                    | Last Updated
+                                    if product.metadata.lastUpdated
+                                        - let options = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
+                                            div #{product.metadata.lastUpdated.toLocaleDateString("en-US", options)}
+                                div.product-group 
+                                    | Product Group
+                                    div #{product.productGroup}
+                                div.product-ratings 
+                                    | Ratings
+                                    div #{product.ratingsAvg}
+                                div.product-material 
+                                    | Material
+                                    div #{product.material}
+                                div.product-slug 
+                                    | Slug
+                                    div #{product.slug}
+                                div.product-description 
+                                    | Description
+                                    div #{product.desc}
+                                div(id=`${product._id}-active`, class="product-active")
+                                    | Is Active?
+                                    div #{product.metadata.active}
+                                div(id=`${product._id}-date-deleted`, class="date-deleted")
+                                    | Date Deleted
+                                    if product.metadata.dateDeleted
+                                        - let options = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
+                                            div #{product.metadata.dateDeleted.toLocaleDateString("en-US", options)}
+                                div.product-comments 
+                                    | Comments
+                                    div #{product.comments}
+                                .product-archive 
+                                    | Archive
+                                    div(id=`${product._id}-archive`, class='archive-value')
+                                .product-buttons
+                                    button.edit-product(data-id=`${product._id}`) Edit
+                                    button.delete-product(data-id=`${product._id}`) Delete product
+                            div(class="archive-details hidden", id=`${product._id}-archive-details`)
+                                                               
+                div(id='users', class='hidden')
+                    h3 Users 
+                    each user in allUsers  
+                        div(id=`${user._id}`, class='user')
+                            div.user-header
+                                div.user-id 
+                                    | User ID
+                                    div #{user._id}
+                                .active
+                                    | Is Active?
+                                    div #{user.metadata.active}
+                                div.user-name
+                                    | Name
+                                    div #{user.firstName} #{user.lastName}
+                                .transaction-flag 
+                                    | Email
+                                    div #{user.email}
+                            div.user-details.hidden
+                                .user-role 
+                                    | Role
+                                    div #{user.metadata.role} 
+                                .address 
+                                    | Address
+                                    div #{user.address}
+                                .user-photo
+                                    | Photo
+                                    div 
+                                        img(src=`/user-images/${user.photo}`)
+                                .date-registered 
+                                    | Date Registered 
+                                    - let options = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
+                                        div #{user.metadata.dateRegistered.toLocaleDateString("en-US",options)}
+
+
+
+    script(type='module', src='/js/admin.js')
+

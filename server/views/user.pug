@@ -1,0 +1,130 @@
+extends base
+
+block content
+    .main
+        .user-main
+            div.user-data
+                each key in keys
+                    if (key==='photo')
+                        div(class=`${key}`)
+                            img(src=`/user-images/${userDetails[key]}`)
+                            label(for="change-user-picture")
+                                i.fa.fa-cloud-upload
+                                |  Change pucture
+                            input(id="change-user-picture" name="user-image" type="file" accept="image/*" data-id=`${userDetails._id}`)
+                    
+                div(class='user-details-div') 
+                    each key in keys
+                        - if (key!=='photo' && key!=='password' && key!=='wishList'&& key!=='rated')
+                            -let label = `${key.toLowerCase().charAt(0).toUpperCase()}${key.slice(1)}`
+                            div(class=`${key}-div`)
+                                label(for=`${key}`) #{label}
+                                if (key==='email')
+                                    input(type='text' class=`${key} user-details-input` id=`${key}-input` name=`${key}` value=`${userDetails[key]}` disabled )
+                                else
+                                    input(type='text' class=`${key} user-details-input` name=`${key}` value=`${userDetails[key]}`)
+
+                    div.user-buttons.bottom-buttons
+                        button(id='change-password-btn' data-id=`${userDetails._id}`) Change password
+                        button(id="update-user-details" data-id=`${userDetails._id}`) Update Details
+
+            .my-orders 
+                h3#myorders-header My orders
+                div#order-details.hidden
+                    each order in orders
+                        div(id=`${order._id}`, class='order')
+                                div.order-header
+                                    div.order-id 
+                                        | Order ID
+                                        div #{order._id}
+                                    .date-ordered 
+                                        | Date Ordered
+                                        - let options = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
+                                            div #{order.dateOrdered.toLocaleDateString("en-US", options)}
+                                    .paypal-amount 
+                                        | Paid Amount
+                                        div #{order.paypalAmount}
+                                div.order-details.hidden
+                                    .order-details__items-ordered
+                                        each item in order.items 
+                                            div.ordered-items
+                                                | Product ID
+                                                div #{item.productId._id}
+                                                | Product Name
+                                                div #{item.productId.name}
+                                                | Cover Image
+                                                div 
+                                                    img(src=`/images/${item.productId.coverImage}`)
+                                                | Product Version
+                                                div #{item.productVersion}
+                                                | Ordered Quantity
+                                                div #{item.amount}
+                                                | Item Unit Price
+                                                div #{item.unitPrice}
+                                        
+                                    .order-details__shipping-details 
+                                        .shipping-name 
+                                            | Shipping Name
+                                            div #{order.name}
+                                        .shipping-address 
+                                            | Shipping Address
+                                            div #{order.address}
+                                        .zipcode 
+                                            | Zipcode 
+                                            div #{order.zipcode}
+                                        .city 
+                                            | Shipping City 
+                                            div #{order.city}
+                                        .country 
+                                            | Shipping Country 
+                                            div #{order.country}
+                                        .telephone 
+                                            | Shipping Telephone 
+                                            div #{order.telephone}
+                                        div.shipping-cost
+                                            | Shipping Cost
+                                            div #{order.shippingCost}
+                                        .shippped 
+                                            | Shipped?
+                                            div(id=`${order._id}-shipped`) #{order.shipped}
+                                        .tracking-number 
+                                            | Tracking Number 
+                                            div(id=`${order._id}-tracking`) #{order.trackingNumber}
+                                        .date-shipped 
+                                            | Date Shipped 
+                                            div(id=`${order._id}-date-shipped`) #{order.dateShipped}
+                                        .cancelled 
+                                            | Cancelled? 
+                                            div(id=`${order._id}-cancelled`) #{order.cancelled}
+                                        .date-cancelled 
+                                            | Date Cancelled  
+                                            div(id=`${order._id}-date-cancelled`) #{order.dateCancelled}
+
+            .my-wishlist 
+                h3#mywishlist-header My wishlist
+                div#wishlist-details.hidden
+                    each product in userDetails.wishList
+                        a(href=`/product/${product.slug}`)
+                            div(id=`${product._id}`, class='product', data-slug=`/product/${product.slug}`)
+                                    div.product-header
+                                        div.cover-image 
+                                            img(src=`/images/${product.coverImage}`)
+                                        div.product-id 
+                                            | Product ID 
+                                            div #{product._id}
+                                        
+                                        div.product-name 
+                                            | Product Name 
+                                            div #{product.name}
+                                        div.product-category
+                                            | Product Category 
+                                            div #{product.category}
+                                        div.product-price 
+                                            | Price
+                                            div #{product.price}#{product.currency}
+                        
+                    
+                        
+
+
+    script(type='module', src='/js/user.js')

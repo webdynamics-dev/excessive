@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jewelry House | Login</title>
+    <link rel="stylesheet" href="../../../public/css/main.css" />
+    <script
+      src="https://kit.fontawesome.com/5d700e72a6.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="login-main">
+      <div class="login">
+        <h1>Welcome back!</h1>
+        <form
+          class="login-form"
+          action="http://127.0.0.1:5050/api/v1/users/login"
+          method="post"
+        >
+          <label for="input-login">Email</label>
+          <input
+            class="form-input"
+            id="input-login"
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Enter your email..."
+          />
+          <label id="label-password" for="input-password"
+            ><span>Password</span
+            ><span><a href="/testlink">Forgot your password?</a></span></label
+          >
+          <input
+            class="form-input"
+            id="input-password"
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Enter your password..."
+          />
+          <button id="submit-login" type="submit">Login</button>
+        </form>
+        <div class="signup">
+          Don't have an account? <a href="/register">Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

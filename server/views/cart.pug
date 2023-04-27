@@ -1,0 +1,113 @@
+extends base
+
+block content
+    .main
+        .main-cart
+            if cartItems
+                .cart
+                    .cart__header
+                        h2 1. Cart
+                    .cart__contents
+                        
+                        each item in cartItems
+                            
+                                
+                            
+                            div(id=`${item._id}` data-id=`${item._id}` data-version=`${item.metadata.version}`).cart-item--card
+                                .cart-item--header
+                                    a(href=`/product/${item.slug}`)
+                                        .item--title #{item.name}
+                                    .functions
+                                        .item--stock(id=`${item._id}-stock`) Available stock #{item.inventory}
+                                        .item--price(id=`${item._id}-price`) € #{item.price}
+                                        .delete--item
+                                            i(id=`delete-${item._id}` data-delete-id=`${item._id}`).fa-solid.fa-trash-can.delete-item
+                                .cart-item--info
+                                    .cart-item--checkbox
+                                        input(type='checkbox' checked='true' data-check-id=`${item._id}` data-check-version=`${item.metadata.version}`).cart__checkbox
+                                    .cart-item--details
+                                        .cart-item--details__image
+                                            img.cart-item-image(src=`/images/${item.coverImage}` alt=`${item.desc}`)
+                                        .cart-item--desc #{item.desc}
+                                    .cart-item--quantity
+                                        .item--quantity
+                                                div.amount-label Number of items
+                                                div.amount
+                                                    i.minus-amount.fa-regular.fa-square-minus
+                                                    span(id=`${item._id}-quantity`, class='item-amount' data-amount-id=`${item._id}`) #{item.amount}
+                                                    i.plus-amount.fa-regular.fa-square-plus
+                    button#empty-cart 
+                        i.fa-solid.fa-trash-can.delete-item
+                        |  Empty cart
+                                    
+
+                if user                    
+                    button(id='checkout', class='logged_in summary') Proceed to Checkout
+                else
+                    button(id='checkout', class='not_logged_in summary') Please Login to Place Order
+
+                .checkout.hidden
+                    .checkout__header
+                        h2 Checkout details
+                    .checkout__details
+                        .checkout__details__order-details
+                            h3 Order summary
+                            p Total order: 
+                                span#products-number x
+                                |  product(s), 
+                                span#total-items-number y
+                                |  item(s)
+                            p Items price: 
+                                span#items-price z
+                            p Discount: 
+                                span#discount €0.00
+                            p Shipping cost: 
+                                span#shipping-cost €0.00
+                            p#total Total cost: 
+                                span#total-cost x+y+z-discount
+                        .shipping-payment    
+                            .shipping-payment__shipping-details
+                                h3 2. Shipping details
+                                div.notice 
+                                    | Please take care to correctly fill in your shipping details. The data that you enter will be used to correctly package, handle and deliver your order. 
+                                    i Excessive 
+                                    |  will not be held responsible for any wrongful delivery or package not being delivered at all, as a result of incorrectly filled in shipping details.
+                                form(action="", id='shipping-details')
+                                    fieldset(id='shipping-details__fields')
+                                        label(for='name') Name 
+                                        input(type='name', name='name', required, minlength = 3)
+                                        label(for='address') Address
+                                        input(type='address' name='address', required, minlength = 3)
+                                        label(for='zipcode') Zip Code
+                                        input(type='zipcode' name='zipcode', required, minlength = 3)
+                                        label(for='city') City
+                                        input(type='city' name='city', required, minlength = 3)
+                                        label(for='country') Country
+                                        input(type='country' name='country', required, minlength = 3)
+                                        label(for='telephone') Telephone
+                                        input(type='telephone' name='telephone', required, minlength = 7)
+                                        button(id='place-order') Confirm Shipping Details
+                            .shipping-payment__payment-details
+                                h3 3. Payment details
+                                div.notice.blue 
+                                    | All payments on 
+                                    i Excessive
+                                    |  are handled through PayPal's secure online payment platform. We therefore, neither have access, nor store any kind of payment or credit card information used for purchase on this website.
+                                
+                                // Replace "test" with your own sandbox Business account app client ID
+                                script(src="https://www.paypal.com/sdk/js?client-id=AQhy6v0jtBFsAjTCpoccv6hqKYZTZXEqAiRRaFAzOvOcpPd3yisaDBmY4fltRUBElVp4K0SsfaE74-bs&currency=EUR")
+
+                                // Set up a container element for the button
+                                #paypal-button-container(class='hidden')
+                                
+                                script(src="/js/paypal.js", type='module')
+                                script(src="/js/cart.js", type='module')
+                                
+                    
+
+                        .checkout__details__payment
+                                
+
+                    
+            else
+                p#cart-empty Cart empty, no items found
