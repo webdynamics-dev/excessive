@@ -71,8 +71,8 @@ body {
   color: black;
 }
 
-#top-div.sticky h1.logo a,
-#top-div.open h1.logo a {
+#top-div.sticky .logo a,
+#top-div.open .logo a {
   color: var(--card-accent-color);
 }
 
@@ -107,8 +107,9 @@ body {
   overflow: visible;
 }
 
-h1.logo {
+.logo {
   font-family: 'WindSong', cursive;
+  font-weight: bold;
   padding: 0 20px;
 
   font-size: 4rem;
@@ -118,15 +119,15 @@ h1.logo {
   transition: all 0.3s;
 }
 
-h1.logo > a {
+.logo > a {
   text-decoration: none;
 }
 
-h1.logo > a::after {
+.logo > a::after {
   content: 'Excessive';
 }
 
-h1.logo > a:visited {
+.logo > a:visited {
   color: white;
 }
 
@@ -2527,7 +2528,7 @@ div#signature > div {
 }
 
 @media screen and (max-width: 610px) {
-  h1.logo {
+  .logo {
     font-size: 2rem;
   }
   #newsletter input {
@@ -2549,7 +2550,7 @@ div#signature > div {
   .main-question {
     width: 80%;
   }
-  h1.logo > a::after {
+  .logo > a::after {
     content: 'E';
   }
   .slogan h1 {
