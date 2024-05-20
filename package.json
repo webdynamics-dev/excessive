@@ -19,7 +19,7 @@
     "nodemailer": "^6.9.1",
     "nodemailer-html-to-text": "^3.2.0",
     "pug": "^3.0.2",
-    "sharp": "^0.31.3",
+    "sharp": "^0.32.6",
     "slugify": "^1.6.5",
     "validator": "^13.7.0",
     "xss-clean": "^0.1.1"
